@@ -1,9 +1,9 @@
 if [ -f docker ]; then
-  . docker
+  source docker
 fi
 if [ -f npm ]; then
-  . npm
+  source npm
 fi
 if [ -f mix ]; then
-  . mix
+  source mix
 fi
