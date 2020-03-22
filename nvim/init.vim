@@ -42,7 +42,7 @@ Plug 'mhinz/vim-mix-format'
 " Rainbow brackets
 Plug 'frazrepo/vim-rainbow'
 
-" let g:coc_node_path = '/usr/local/Cellar/nvm/0.35.1/versions/node/v8.10.0/bin/node'
+let g:coc_node_path = '/usr/local/Cellar/nvm/0.35.1/versions/node/v8.10.0/bin/node'
 
 " Initialize plugin system
 call plug#end()
