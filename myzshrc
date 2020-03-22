@@ -1,0 +1,9 @@
+if [ -f docker ]; then
+  . docker
+fi
+if [ -f npm ]; then
+  . npm
+fi
+if [ -f mix ]; then
+  . mix
+fi
