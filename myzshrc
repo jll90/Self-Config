@@ -1,9 +1,9 @@
-if [ -f docker ]; then
-  source docker
+if [ -f ./aliases/docker ]; then
+  source ./aliases/docker
 fi
-if [ -f npm ]; then
-  source npm
+if [ -f ./aliases/npm ]; then
+  source ./aliases/npm
 fi
-if [ -f mix ]; then
-  source mix
+if [ -f ./aliases/mix ]; then
+  source ./aliases/mix
 fi
