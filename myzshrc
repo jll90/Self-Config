@@ -1,9 +1,11 @@
-if [ -f ./aliases/docker ]; then
-  source ./aliases/docker
+if [ -f ${SELF_CONFIG_PATH}/aliases/docker ]; then
+  source ${SELF_CONFIG_PATH}/aliases/docker
 fi
-if [ -f ./aliases/npm ]; then
-  source ./aliases/npm
+
+if [ -f ${SELF_CONFIG_PATH}/aliases/npm ]; then
+  source ${SELF_CONFIG_PATH}/aliases/npm
 fi
-if [ -f ./aliases/mix ]; then
-  source ./aliases/mix
+
+if [ -f ${SELF_CONFIG_PATH}/aliases/mix ]; then
+  source ${SELF_CONFIG_PATH}/aliases/mix
 fi
