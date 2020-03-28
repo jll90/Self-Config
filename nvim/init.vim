@@ -84,3 +84,5 @@ map <C-p> :Files<CR>
 set cmdheight=2
 
 let g:mix_format_on_save = 1
+
+nnoremap <silent> <expr> <F6> g:NERDTree.IsOpen() ? "\:NERDTreeClose<CR>" : bufexists(expand('%')) ? "\:NERDTreeFind<CR>" : "\:NERDTree<CR>"
