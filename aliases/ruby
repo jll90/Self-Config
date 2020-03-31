@@ -1,0 +1,4 @@
+alias rs="rails server"
+alias rc="rails console"
+alias besk="bundle exec sk"
+alias bi="bundle install"

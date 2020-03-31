@@ -9,3 +9,7 @@ fi
 if [ -f ${SELF_CONFIG_PATH}/aliases/mix ]; then
   source ${SELF_CONFIG_PATH}/aliases/mix
 fi
+
+if [ -f ${SELF_CONFIG_PATH}/aliases/ruby ]; then
+  source ${SELF_CONFIG_PATH}/aliases/ruby
+fi
