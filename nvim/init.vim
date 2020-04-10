@@ -42,7 +42,8 @@ Plug 'mhinz/vim-mix-format'
 " Rainbow brackets
 Plug 'frazrepo/vim-rainbow'
 
-Plug 'mlaursen/vim-react-snippets'
+" Comments 
+Plug 'tpope/vim-commentary'
 
 let g:coc_node_path = '/usr/local/Cellar/nvm/0.35.1/versions/node/v8.10.0/bin/node'
 
