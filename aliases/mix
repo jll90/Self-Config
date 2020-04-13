@@ -1,4 +1,4 @@
-alias mps="mix phx.server"
+alias mpxs="mix phx.server"
 alias mem="mix ecto.migrate"
 alias mrs="mix run priv/repo/seeds.exs"
 alias mf="mix format"
