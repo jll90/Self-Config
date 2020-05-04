@@ -45,6 +45,8 @@ Plug 'frazrepo/vim-rainbow'
 " Comments 
 Plug 'tpope/vim-commentary'
 
+" Scss formatting
+Plug 'cakebaker/scss-syntax.vim'
 let g:coc_node_path = '/usr/local/Cellar/nvm/0.35.1/versions/node/v8.10.0/bin/node'
 
 " Initialize plugin system
