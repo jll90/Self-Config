@@ -13,3 +13,5 @@ fi
 if [ -f ${SELF_CONFIG_PATH}/aliases/ruby ]; then
   source ${SELF_CONFIG_PATH}/aliases/ruby
 fi
+
+export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --glob "!.git/*"'

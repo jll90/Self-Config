@@ -24,6 +24,8 @@ Plug 'airblade/vim-gitgutter'
 
 "File Tree Navigation
 Plug 'preservim/nerdtree'
+"Pretty IDE-like icons
+Plug 'ryanoasis/vim-devicons'
 
 "GUI
 Plug 'itchyny/lightline.vim'
@@ -49,6 +51,7 @@ Plug 'tpope/vim-commentary'
 Plug 'cakebaker/scss-syntax.vim'
 let g:coc_node_path = '/usr/local/Cellar/nvm/0.35.1/versions/node/v8.10.0/bin/node'
 
+let g:coc_global_extensions = ['coc-emmet', 'coc-angular', 'coc-css', 'coc-elixir', 'coc-html', 'coc-solargraph', 'coc-tsserver']
 " Initialize plugin system
 call plug#end()
 
@@ -92,6 +95,13 @@ set cmdheight=2
 
 let g:mix_format_on_save = 1
 
+let g:NERDTreeShowHidden = 1
+let g:NERDTreeMinimalUI = 1
+let g:NERDTreeIgnore = []
+let g:NERDTreeStatusline = ''
+" Automaticaly close nvim if NERDTree is only thing left open
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+" Toggle
 nnoremap <silent> <expr> <F6> g:NERDTree.IsOpen() ? "\:NERDTreeClose<CR>" : bufexists(expand('%')) ? "\:NERDTreeFind<CR>" : "\:NERDTree<CR>"
 
 let g:rainbow_active = 1
@@ -105,3 +115,21 @@ let g:rainbow_load_separately = [
 
 let g:rainbow_guifgs = ['RoyalBlue3', 'DarkOrange3', 'DarkOrchid3', 'FireBrick']
 let g:rainbow_ctermfgs = ['lightblue', 'lightgreen', 'yellow', 'red', 'magenta']
+
+"navigate splits using alt+key
+tnoremap <A-h> <C-\><C-n><C-w>h
+tnoremap <A-j> <C-\><C-n><C-w>j
+tnoremap <A-k> <C-\><C-n><C-w>k
+tnoremap <A-l> <C-\><C-n><C-w>l
+nnoremap <A-h> <C-w>h
+nnoremap <A-j> <C-w>j
+nnoremap <A-k> <C-w>k
+nnoremap <A-l> <C-w>l
+
+" https://github.com/ryanoasis/vim-devicons/wiki/Installation
+" when using on Ubuntu check this url
+set encoding=utf8
+" Must match terminal
+set guifont=Hack_Nerd_Font:h12
+
+
