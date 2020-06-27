@@ -1,0 +1,7 @@
+#! /bin/bash
+
+gcps(){
+  git add .
+  git ci -m "$1"
+  git push
+}
