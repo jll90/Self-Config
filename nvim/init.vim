@@ -31,6 +31,7 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'itchyny/lightline.vim'
 Plug 'w0rp/ale'
 Plug 'machakann/vim-highlightedyank'
+Plug 'vim-airline/vim-airline'
 
 " Coc vim
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -44,6 +45,9 @@ Plug 'mhinz/vim-mix-format'
 " Rainbow brackets
 Plug 'frazrepo/vim-rainbow'
 
+" Autocomplete brackets etc
+Plug 'jiangmiao/auto-pairs'
+
 " Comments 
 Plug 'tpope/vim-commentary'
 
@@ -51,7 +55,7 @@ Plug 'tpope/vim-commentary'
 Plug 'cakebaker/scss-syntax.vim'
 let g:coc_node_path = '/usr/local/Cellar/nvm/0.35.1/versions/node/v8.10.0/bin/node'
 
-let g:coc_global_extensions = ['coc-emmet', 'coc-angular', 'coc-css', 'coc-elixir', 'coc-html', 'coc-solargraph', 'coc-tsserver']
+let g:coc_global_extensions = ['coc-emmet', 'coc-angular', 'coc-css', 'coc-elixir', 'coc-html', 'coc-solargraph', 'coc-tsserver', 'coc-python']
 " Initialize plugin system
 call plug#end()
 
