@@ -16,6 +16,8 @@ Plug 'sheerun/vim-polyglot'
 
 "Visual Theme
 Plug 'joshdick/onedark.vim'
+Plug 'morhetz/gruvbox'
+Plug 'crusoexia/vim-monokai'
 
 Plug 'tpope/vim-surround'
 
@@ -59,7 +61,11 @@ let g:coc_global_extensions = ['coc-emmet', 'coc-angular', 'coc-css', 'coc-elixi
 " Initialize plugin system
 call plug#end()
 
+syntax on
 colorscheme onedark
+" colorscheme gruvbox
+" colorscheme monokai
+
 set number
 set expandtab
 set softtabstop=2
