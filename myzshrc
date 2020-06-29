@@ -18,5 +18,8 @@ if [ -f ${SELF_CONFIG_PATH}/aliases/git ]; then
   source ${SELF_CONFIG_PATH}/aliases/git
 fi
 
+if [ -f ${SELF_CONFIG_PATH}/aliases/brew ]; then
+  source ${SELF_CONFIG_PATH}/aliases/brew
+fi
 
 export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --glob "!.git/*"'
