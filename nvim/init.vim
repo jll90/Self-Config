@@ -55,7 +55,10 @@ Plug 'tpope/vim-commentary'
 
 " Scss formatting
 Plug 'cakebaker/scss-syntax.vim'
-let g:coc_node_path = '/usr/local/Cellar/nvm/0.35.1/versions/node/v8.10.0/bin/node'
+
+if !empty($NODE_CUSTOM_PATH_VIM)
+  let g:coc_node_path = '/usr/local/Cellar/nvm/0.35.1/versions/node/v8.10.0/bin/node'
+end
 
 let g:coc_global_extensions = ['coc-emmet', 'coc-angular', 'coc-css', 'coc-elixir', 'coc-html', 'coc-solargraph', 'coc-tsserver', 'coc-python']
 " Initialize plugin system
