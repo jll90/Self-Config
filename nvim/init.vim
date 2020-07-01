@@ -139,10 +139,11 @@ nnoremap <A-j> <C-w>j
 nnoremap <A-k> <C-w>k
 nnoremap <A-l> <C-w>l
 
-" https://github.com/ryanoasis/vim-devicons/wiki/Installation
+" https://github.com/ryanoasis/vim-devicons/wiki/Installationr
 " when using on Ubuntu check this url
 set encoding=utf8
 " Must match terminal
-set guifont=Hack_Nerd_Font:h12
+" set guifont=DroidSansMono\ Nerd\ Font\ Mono\ Book\ 12
+set guifont=Hack\ Regular\ 12
 
 
