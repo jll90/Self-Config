@@ -169,3 +169,17 @@ dklg (){
     return 1
   fi
 }
+
+dkeb (){
+  if [ $# -eq 1 ]; then
+    result=$(docker ps | awk -v name="$1" '($2~name) {print $1; exit}')
+    if [ -n $result ]; then
+      docker exec -it $result /bin/bash
+    else
+      echo "No matching containers for $1"
+    fi
+  else
+    echo "function supports exactly one argument"
+    return 1
+  fi
+}
