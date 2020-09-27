@@ -16,19 +16,16 @@ alias dkps="docker ps --format '{{.ID}} ~ {{.Names}} ~ {{.Status}} ~ {{.Image}}'
 alias dkstp="docker stop $(docker ps -q)"
 
 alias dcu='docker-compose up'
+alias dcustg='docker-compose -f docker-compose.yml -f docker-compose.staging.yml up'
+alias dcut='docker-compose -f docker-compose.yml -f docker-compose.test.yml up'
 alias dcub='docker-compose up --build'
 alias dcb='docker-compose build'
-alias dcbnc='docker-compose build --no-cache'
+alias dcbstg='docker-compose -f docker-compose.yml -f docker-compose.staging.yml build'
+alias dcbt='docker-compose -f docker-compose.yml -f docker-compose.test.yml build'
+alias dcbnc='docker-compose up --no-cache'
+alias dce='docker-compose exec'
 alias dcr='docker-compose run'
 alias dcrr='docker-compose run --rm'
-
-dcesh () {
-  docker-compose exec $1 /bin/sh
-}
-
-dcebash () {
-  docker-compose exec $1 /bin/bash
-}
 
 dkln() {
   docker logs -f `docker ps | grep $1 | awk '{print $1}'`
@@ -158,7 +155,7 @@ dkst (){
 
 dklg (){
   if [ $# -eq 1 ]; then
-    result=$(docker ps | awk -v name="$1" '($2~name && $2~/_app/) {print $1; exit}')
+    result=$(docker ps | awk -v name="$1" '($2~name) {print $1; exit}')
     if [ -n $result ]; then
       docker logs -f $result
     else
