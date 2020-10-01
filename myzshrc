@@ -23,3 +23,8 @@ if [ -f ${SELF_CONFIG_PATH}/aliases/brew ]; then
 fi
 
 export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --glob "!.git/*"'
+
+alias chconfig="nvim ~/.zshrc"
+alias refreshEnv="source $HOME/.zshrc"
+alias hg="history | grep"
+alias eg="env | grep" 
