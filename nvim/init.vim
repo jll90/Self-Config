@@ -1,3 +1,5 @@
+" osx may need to install pip3 install pynvim
+
 call plug#begin('~/.vim/plugged')
 
 " Shorthand notation; fetches https://github.com/junegunn/vim-easy-align
