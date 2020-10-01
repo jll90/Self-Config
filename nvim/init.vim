@@ -157,7 +157,7 @@ nnoremap <silent> <space>y  :<C-u>CocList -A --normal yank<cr>
 set encoding=utf8
 " Must match terminal
 " set guifont=DroidSansMono\ Nerd\ Font\ Mono\ Book\ 12
-set guifont=Hack\ Regular\ 12
+set guifont=$NVIM_FONT
 
 " coc-snippets
 " Use <C-l> for trigger snippet expand.
