@@ -24,6 +24,8 @@ fi
 
 export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --glob "!.git/*"'
 
+alias n.="nvim ."
+alias tf="tail -f"
 alias chconfig="nvim ~/.zshrc"
 alias refreshEnv="source $HOME/.zshrc"
 alias hg="history | grep"

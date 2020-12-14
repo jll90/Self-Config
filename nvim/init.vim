@@ -67,6 +67,9 @@ Plug 'cakebaker/scss-syntax.vim'
 " Snippets
 Plug 'honza/vim-snippets'
 
+" Relative numbers
+Plug 'myusuf3/numbers.vim'
+
 if !empty($NODE_CUSTOM_PATH_VIM)
   let g:coc_node_path = '/usr/local/Cellar/nvm/0.35.1/versions/node/v8.10.0/bin/node'
 end
@@ -203,3 +206,7 @@ fun! PullAndRefresh()
 endfun
 
 nnoremap <expr> <F5>call PullAndRefresh()
+
+nnoremap <F3> :NumbersToggle<CR>
+nnoremap <F4> :NumbersOnOff<CR>
+
