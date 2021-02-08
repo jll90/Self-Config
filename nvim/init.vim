@@ -37,11 +37,12 @@ Plug 'preservim/nerdtree'
 Plug 'ryanoasis/vim-devicons'
 
 "GUI
-Plug 'itchyny/lightline.vim'
+" Plug 'itchyny/lightline.vim'
 Plug 'w0rp/ale'
 " coc-yank does this now
 " Plug 'machakann/vim-highlightedyank'
 Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 
 " Coc vim
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -70,19 +71,31 @@ Plug 'honza/vim-snippets'
 " Relative numbers
 Plug 'myusuf3/numbers.vim'
 
+" Preview
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
+
+" For purify theme
+Plug 'kyoz/purify', { 'rtp': 'vim' }
+
+ " blame
+Plug 'APZelos/blamer.nvim'
+
+let mapleader = "," " map leader to comma
+
 if !empty($NODE_CUSTOM_PATH_VIM)
   let g:coc_node_path = '/usr/local/Cellar/nvm/0.35.1/versions/node/v8.10.0/bin/node'
 end
 
 " https://github.com/neoclide/coc-yank
-let g:coc_global_extensions = ['coc-snippets', 'coc-emmet', 'coc-angular', 'coc-css', 'coc-elixir', 'coc-html', 'coc-solargraph', 'coc-tsserver', 'coc-python', 'coc-json', 'coc-yank', 'coc-prettier', 'coc-docker', 'coc-rls', 'coc-rust-analyzer']
+let g:coc_global_extensions = ['coc-snippets', 'coc-emmet', 'coc-angular', 'coc-css', 'coc-elixir', 'coc-html', 'coc-solargraph', 'coc-tsserver', 'coc-python', 'coc-json', 'coc-yank', 'coc-prettier', 'coc-docker', 'coc-rls', 'coc-rust-analyzer', 'coc-lua']
 " Initialize plugin system
 call plug#end()
 
 syntax on
-colorscheme onedark
+" colorscheme onedark
 " colorscheme gruvbox
 " colorscheme monokai
+colorscheme purify
 
 set number
 set expandtab
@@ -118,6 +131,7 @@ nmap <silent> gr <Plug>(coc-references)
 se mouse+=a
 
 map <C-p> :Files<CR>
+map <C-s> :w<CR>
 
 set cmdheight=2
 
@@ -130,7 +144,8 @@ let g:NERDTreeStatusline = ''
 " Automaticaly close nvim if NERDTree is only thing left open
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 " Toggle
-nnoremap <silent> <expr> <F6> g:NERDTree.IsOpen() ? "\:NERDTreeClose<CR>" : bufexists(expand('%')) ? "\:NERDTreeFind<CR>" : "\:NERDTree<CR>"
+" nnoremap <leader>tr g:NERDTree.IsOpen() ? "\:NERDTreeClose<CR>" : bufexists(expand('%')) ? "\:NERDTreeFind<CR>" : "\:NERDTree<CR>"
+nnoremap <leader>t :NERDTreeToggle<CR>
 
 let g:rainbow_active = 1
 
@@ -210,3 +225,22 @@ nnoremap <expr> <F5>call PullAndRefresh()
 nnoremap <F3> :NumbersToggle<CR>
 nnoremap <F4> :NumbersOnOff<CR>
 
+nmap <leader>fmt :Prettier<CR>
+nmap <leader>do <Plug>(coc-codeaction)
+nmap <leader>rn <Plug>(coc-rename)
+
+" airline shows buffers up top when there's one tab open
+let g:airline#extensions#tabline#enabled = 1
+
+let g:airline#extensions#tabline#left_sep = ' '
+let g:airline#extensions#tabline#left_alt_sep = '|'
+
+let g:airline#extensions#tabline#formatter = 'default'
+
+" let g:airline_theme='simple'
+"
+let g:LanguageClient_rootMarkers = ['*.cabal', 'stack.yaml']
+
+let g:blamer_enabled = 1
+let g:blamer_delay = 500
+let g:blamer_prefix = ' > '

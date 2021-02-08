@@ -1,1 +1,37 @@
-/Users/j2l/.config/nvim/coc-settings.json
+{
+  "coc.preferences.formatOnSaveFiletypes": [
+    "css",
+    "scss",
+    "markdown",
+    "js",
+    "ts",
+    "typescriptreact",
+    "javascriptreact",
+    "ruby"
+  ],
+  "elixir.pathToElixirLS": "~/.elixir-ls/release/language_server.sh",
+  "solargraph.autoformat": true,
+  "solargraph.formatting": true,
+  "snippets.extends": {
+    "cpp": ["c"],
+    "javascriptreact": ["javascript"],
+    "typescript": ["javascript", "javascriptreact"],
+    "typescriptreact": ["javascript", "javascriptreact", "typescript"]
+  },
+  "prettier.disableSuccessMessage": true,
+  "languageserver": {
+    "haskell": {
+      "command": "haskell-language-server-wrapper",
+      "args": ["--lsp"],
+      "rootPatterns": ["*.cabal", "stack.yaml", "cabal.project", "package.yaml", "hie.yam"],
+      "filetypes": ["hs", "lhs", "haskell", "lhaskell"],
+      "initializationOptions": {
+        "languageServerHaskell": {
+          "hlintOn": true,
+          "maxNumberOfProblems": 10,
+          "completionSnippetsOn": true
+        }
+      }
+    }
+  }
+}
