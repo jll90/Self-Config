@@ -17,13 +17,15 @@ Plug 'elixir-editors/vim-elixir'
 Plug 'sheerun/vim-polyglot'
 
 "Visual Theme
-Plug 'joshdick/onedark.vim'
-Plug 'morhetz/gruvbox'
-Plug 'crusoexia/vim-monokai'
+" Plug 'joshdick/onedark.vim'
+" Plug 'morhetz/gruvbox'
+" Plug 'crusoexia/vim-monokai'
 
 Plug 'tpope/vim-surround'
 " All around git support
 Plug 'tpope/vim-fugitive'
+"Vim sessions
+Plug 'tpope/vim-obsession'
 
 " Git commit history
 Plug 'rhysd/git-messenger.vim'
@@ -32,7 +34,7 @@ Plug 'rhysd/git-messenger.vim'
 Plug 'airblade/vim-gitgutter'
 
 "File Tree Navigation
-Plug 'preservim/nerdtree'
+Plug 'preservim/nerdtree', { 'on': 'NERDTreeToggle' }
 "Pretty IDE-like icons
 Plug 'ryanoasis/vim-devicons'
 
@@ -45,13 +47,14 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
 " Coc vim
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'neoclide/coc.nvim', {'branch': 'master', 'do': 'yarn install --frozen-lockfile'}
 
 " Vim formatting
 Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 
 " Elixir formatting using native mix
-Plug 'mhinz/vim-mix-format'
+Plug 'mhinz/vim-mix-format', {'for': 'elixir'}
 
 " Rainbow brackets
 Plug 'frazrepo/vim-rainbow'
@@ -72,13 +75,16 @@ Plug 'honza/vim-snippets'
 Plug 'myusuf3/numbers.vim'
 
 " Preview
-Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install', 'for': 'markdown'  }
 
 " For purify theme
 Plug 'kyoz/purify', { 'rtp': 'vim' }
 
  " blame
 Plug 'APZelos/blamer.nvim'
+
+ " Syntax highlighting
+Plug 'posva/vim-vue'
 
 let mapleader = "," " map leader to comma
 
@@ -87,7 +93,8 @@ if !empty($NODE_CUSTOM_PATH_VIM)
 end
 
 " https://github.com/neoclide/coc-yank
-let g:coc_global_extensions = ['coc-snippets', 'coc-emmet', 'coc-angular', 'coc-css', 'coc-elixir', 'coc-html', 'coc-solargraph', 'coc-tsserver', 'coc-python', 'coc-json', 'coc-yank', 'coc-prettier', 'coc-docker', 'coc-rls', 'coc-rust-analyzer', 'coc-lua']
+let g:coc_global_extensions = ['coc-snippets', 'coc-emmet', 'coc-angular', 'coc-css', 'coc-elixir', 'coc-html', 'coc-solargraph', 'coc-tsserver', 'coc-python', 'coc-json', 'coc-yank', 'coc-prettier', 'coc-docker', 'coc-rls', 'coc-rust-analyzer', 'coc-lua', 'coc-yaml', 'coc-sql', 'coc-vetur']
+
 " Initialize plugin system
 call plug#end()
 
@@ -128,12 +135,12 @@ nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 
-se mouse+=a
+" se mouse+=a
 
 map <C-p> :Files<CR>
 map <C-s> :w<CR>
 
-set cmdheight=2
+set cmdheight=3
 
 let g:mix_format_on_save = 1
 
@@ -228,6 +235,14 @@ nnoremap <F4> :NumbersOnOff<CR>
 nmap <leader>fmt :Prettier<CR>
 nmap <leader>do <Plug>(coc-codeaction)
 nmap <leader>rn <Plug>(coc-rename)
+nmap <leader>qf <Plug>(coc-fix-current)
+
+" Use <c-space> to trigger completion.
+if has('nvim')
+  inoremap <silent><expr> <c-space> coc#refresh()
+else
+  inoremap <silent><expr> <c-@> coc#refresh()
+endif
 
 " airline shows buffers up top when there's one tab open
 let g:airline#extensions#tabline#enabled = 1
@@ -241,6 +256,13 @@ let g:airline#extensions#tabline#formatter = 'default'
 "
 let g:LanguageClient_rootMarkers = ['*.cabal', 'stack.yaml']
 
-let g:blamer_enabled = 1
+let g:blamer_enabled = 0
 let g:blamer_delay = 500
 let g:blamer_prefix = ' > '
+
+set updatetime=300
+" nmap <Esc> :call coc#float#close_all() <CR>
+"
+set hidden
+
+let g:ale_completion_autoimport = 1

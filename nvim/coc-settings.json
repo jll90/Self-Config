@@ -1,4 +1,9 @@
 {
+  "signature.hideOnTextChange": true,
+  "diagnostic.messageDelay": 100,
+  "diagnostic.virtualText": true,
+  "diagnostic.virtualTextCurrentLineOnly": false,
+  "diagnostic.displayByAle": true,
   "coc.preferences.formatOnSaveFiletypes": [
     "css",
     "scss",
@@ -7,9 +12,11 @@
     "ts",
     "typescriptreact",
     "javascriptreact",
-    "ruby"
+    "ruby",
+    "rust"
   ],
   "elixir.pathToElixirLS": "~/.elixir-ls/release/language_server.sh",
+  "elixirLS.suggestSpecs": true,
   "solargraph.autoformat": true,
   "solargraph.formatting": true,
   "snippets.extends": {
