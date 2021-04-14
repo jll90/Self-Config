@@ -3,7 +3,6 @@
   "diagnostic.messageDelay": 100,
   "diagnostic.virtualText": true,
   "diagnostic.virtualTextCurrentLineOnly": false,
-  "diagnostic.displayByAle": true,
   "coc.preferences.formatOnSaveFiletypes": [
     "css",
     "scss",

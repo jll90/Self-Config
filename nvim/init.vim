@@ -47,8 +47,8 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
 " Coc vim
-" Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'neoclide/coc.nvim', {'branch': 'master', 'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" Plug 'neoclide/coc.nvim', {'branch': 'master', 'do': 'yarn install --frozen-lockfile'}
 
 " Vim formatting
 Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
@@ -93,7 +93,7 @@ if !empty($NODE_CUSTOM_PATH_VIM)
 end
 
 " https://github.com/neoclide/coc-yank
-let g:coc_global_extensions = ['coc-snippets', 'coc-emmet', 'coc-angular', 'coc-css', 'coc-elixir', 'coc-html', 'coc-solargraph', 'coc-tsserver', 'coc-python', 'coc-json', 'coc-yank', 'coc-prettier', 'coc-docker', 'coc-rls', 'coc-rust-analyzer', 'coc-lua', 'coc-yaml', 'coc-sql', 'coc-vetur']
+let g:coc_global_extensions = ['coc-snippets', 'coc-emmet', 'coc-angular', 'coc-css', 'coc-elixir', 'coc-html', 'coc-solargraph', 'coc-tsserver', 'coc-python', 'coc-json', 'coc-yank', 'coc-prettier', 'coc-docker', 'coc-rls', 'coc-rust-analyzer', 'coc-lua', 'coc-yaml', 'coc-sql', 'coc-vetur', 'coc-go']
 
 " Initialize plugin system
 call plug#end()
