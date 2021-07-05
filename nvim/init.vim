@@ -1,4 +1,5 @@
 " osx may need to install pip3 install pynvim
+" source $HOME/.config/nvim/themes/lucario.vim
 
 call plug#begin('~/.vim/plugged')
 
@@ -17,9 +18,6 @@ Plug 'elixir-editors/vim-elixir'
 Plug 'sheerun/vim-polyglot'
 
 "Visual Theme
-" Plug 'joshdick/onedark.vim'
-" Plug 'morhetz/gruvbox'
-" Plug 'crusoexia/vim-monokai'
 
 Plug 'tpope/vim-surround'
 " All around git support
@@ -79,6 +77,11 @@ Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install', 'for': 'm
 
 " For purify theme
 Plug 'kyoz/purify', { 'rtp': 'vim' }
+Plug 'sonph/onehalf', { 'rtp': 'vim' }
+Plug 'mhartington/oceanic-next'
+Plug 'joshdick/onedark.vim'
+Plug 'morhetz/gruvbox'
+Plug 'crusoexia/vim-monokai'
 
  " blame
 Plug 'APZelos/blamer.nvim'
@@ -93,18 +96,33 @@ if !empty($NODE_CUSTOM_PATH_VIM)
 end
 
 " https://github.com/neoclide/coc-yank
-let g:coc_global_extensions = ['coc-snippets', 'coc-emmet', 'coc-angular', 'coc-css', 'coc-elixir', 'coc-html', 'coc-solargraph', 'coc-tsserver', 'coc-python', 'coc-json', 'coc-yank', 'coc-prettier', 'coc-docker', 'coc-rls', 'coc-rust-analyzer', 'coc-lua', 'coc-yaml', 'coc-sql', 'coc-vetur', 'coc-go', 'coc-tabnine', 'coc-julia']
+let g:coc_global_extensions = ['coc-snippets', 'coc-emmet', 'coc-angular', 'coc-css', 'coc-elixir', 'coc-html', 'coc-solargraph', 'coc-tsserver', 'coc-json', 'coc-yank', 'coc-prettier', 'coc-docker', 'coc-rls', 'coc-rust-analyzer', 'coc-lua', 'coc-yaml', 'coc-sql', 'coc-vetur', 'coc-go', 'coc-tabnine', 'coc-julia']
 
 " Initialize plugin system
 call plug#end()
 
 syntax on
+set number
+
+set t_Co=256
+set cursorline
+
+if (has("termguicolors"))
+ set termguicolors
+endif
+
 " colorscheme onedark
 " colorscheme gruvbox
 " colorscheme monokai
-colorscheme purify
+" colorscheme molokai
+" colorscheme purify
+" colorscheme lucario
+colorscheme onehalfdark
+let g:airline_theme='onehalfdark'
 
-set number
+" colorscheme OceanicNext
+" let g:airline_theme='oceanictext'
+
 set expandtab
 set softtabstop=2
 set tabstop=2
@@ -163,8 +181,8 @@ let g:rainbow_load_separately = [
     \ [ '*.{html,htm,js}' , [['(', ')'], ['\[', '\]'], ['{', '}'], ['<\a[^>]*>', '</[^>]*>']] ],
     \ ]
 
-let g:rainbow_guifgs = ['RoyalBlue3', 'DarkOrange3', 'DarkOrchid3', 'FireBrick']
-let g:rainbow_ctermfgs = ['lightblue', 'lightgreen', 'yellow', 'red', 'magenta']
+" let g:rainbow_guifgs = ['RoyalBlue3', 'DarkOrange3', 'DarkOrchid3', 'FireBrick']
+" let g:rainbow_ctermfgs = ['lightblue', 'lightgreen', 'yellow', 'red', 'magenta']
 
 "navigate splits using alt+key
 tnoremap <A-h> <C-\><C-n><C-w>h
