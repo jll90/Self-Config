@@ -38,15 +38,16 @@ Plug 'ryanoasis/vim-devicons'
 
 "GUI
 " Plug 'itchyny/lightline.vim'
-Plug 'w0rp/ale'
+" Plug 'w0rp/ale'
 " coc-yank does this now
 " Plug 'machakann/vim-highlightedyank'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
 " Coc vim
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Plug 'neoclide/coc.nvim', {'branch': 'master', 'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
 
 " Vim formatting
 Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
@@ -90,10 +91,6 @@ Plug 'APZelos/blamer.nvim'
 Plug 'posva/vim-vue'
 
 let mapleader = "," " map leader to comma
-
-if !empty($NODE_CUSTOM_PATH_VIM)
-  let g:coc_node_path = '/usr/local/Cellar/nvm/0.35.1/versions/node/v8.10.0/bin/node'
-end
 
 " https://github.com/neoclide/coc-yank
 let g:coc_global_extensions = ['coc-snippets', 'coc-emmet', 'coc-angular', 'coc-css', 'coc-elixir', 'coc-html', 'coc-solargraph', 'coc-tsserver', 'coc-json', 'coc-yank', 'coc-prettier', 'coc-docker', 'coc-rls', 'coc-rust-analyzer', 'coc-lua', 'coc-yaml', 'coc-sql', 'coc-vetur', 'coc-go', 'coc-tabnine', 'coc-julia']
