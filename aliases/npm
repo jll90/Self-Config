@@ -22,5 +22,8 @@ alias yb="yarn build"
 alias yt="yarn test"
 alias yco="yarn cy:open"
 alias ycr="yarn cy:run"
+
 alias yri="yarn run ios"
 alias yra="yarn run android"
+alias yras="yarn run android:staging"
+alias yrasb="yarn run android:staging:build"

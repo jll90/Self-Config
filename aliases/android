@@ -1,0 +1,5 @@
+alias ls-avds="$ANDROID_HOME/tools/emulator -list-avds"
+
+run_and (){
+  $ANDROID_HOME/tools/emulator -avd $1
+}

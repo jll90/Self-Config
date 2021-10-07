@@ -17,6 +17,8 @@ alias dkstp="docker stop $(docker ps -q)"
 
 alias dcu='docker-compose up'
 alias dcustg='docker-compose -f docker-compose.yml -f docker-compose.staging.yml up'
+alias dcunfs='docker-compose -f docker-compose.yml -f docker-compose.override.yml -f docker-compose.override-nfs.yml up'
+alias dcunfss='docker-compose -f docker-compose.yml -f docker-compose.override-nfs.yml up'
 alias dcut='docker-compose -f docker-compose.yml -f docker-compose.test.yml up'
 alias dcub='docker-compose up --build'
 alias dcb='docker-compose build'

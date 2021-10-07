@@ -1,3 +1,7 @@
+if [ -f ${SELF_CONFIG_PATH}/aliases/android ]; then
+  source ${SELF_CONFIG_PATH}/aliases/android
+fi
+
 if [ -f ${SELF_CONFIG_PATH}/aliases/docker ]; then
   source ${SELF_CONFIG_PATH}/aliases/docker
 fi
