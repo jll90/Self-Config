@@ -271,7 +271,7 @@ let g:airline#extensions#tabline#formatter = 'default'
 "
 let g:LanguageClient_rootMarkers = ['*.cabal', 'stack.yaml']
 
-let g:blamer_enabled = 0
+let g:blamer_enabled = 1
 let g:blamer_delay = 500
 let g:blamer_prefix = ' > '
 
