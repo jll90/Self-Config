@@ -20,6 +20,7 @@ alias yi="yarn install"
 alias yis="yarn install && yarn start"
 alias yb="yarn build"
 alias yt="yarn test"
+alias ytw="yarn test:watch"
 alias yco="yarn cy:open"
 alias ycr="yarn cy:run"
 
