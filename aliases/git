@@ -6,4 +6,9 @@ gcps(){
   git push
 }
 
+gcmt(){
+  git commit -m "$1"
+}
+
+alias gaa='git add .'
 alias gco='git checkout'
