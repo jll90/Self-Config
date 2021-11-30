@@ -83,6 +83,7 @@ Plug 'mhartington/oceanic-next'
 Plug 'joshdick/onedark.vim'
 Plug 'morhetz/gruvbox'
 Plug 'crusoexia/vim-monokai'
+Plug 'ngmy/vim-rubocop'
 
  " blame
 Plug 'APZelos/blamer.nvim'

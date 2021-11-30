@@ -18,6 +18,14 @@
   "elixirLS.suggestSpecs": true,
   "solargraph.autoformat": true,
   "solargraph.formatting": true,
+  "solargraph.externalServer": {
+    "host": "localhost",
+    "port": 7658
+  },
+  "solargraph.transport": "external",
+  "solargraph.diagnostics": true,
+  "solargraph.hover": false,
+  "solargraph.checkGemVersion": false,
   "snippets.extends": {
     "cpp": ["c"],
     "javascriptreact": ["javascript"],
@@ -29,7 +37,13 @@
     "haskell": {
       "command": "haskell-language-server-wrapper",
       "args": ["--lsp"],
-      "rootPatterns": ["*.cabal", "stack.yaml", "cabal.project", "package.yaml", "hie.yam"],
+      "rootPatterns": [
+        "*.cabal",
+        "stack.yaml",
+        "cabal.project",
+        "package.yaml",
+        "hie.yam"
+      ],
       "filetypes": ["hs", "lhs", "haskell", "lhaskell"],
       "initializationOptions": {
         "languageServerHaskell": {
