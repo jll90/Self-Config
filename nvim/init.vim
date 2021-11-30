@@ -88,8 +88,8 @@ Plug 'ngmy/vim-rubocop'
  " blame
 Plug 'APZelos/blamer.nvim'
 
- " Syntax highlighting
-Plug 'posva/vim-vue'
+Plug 'ap/vim-css-color'
+
 
 let mapleader = "," " map leader to comma
 
