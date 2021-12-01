@@ -157,6 +157,8 @@ map <C-p> :Files<CR>
 map <C-s> :w<CR>
 
 set cmdheight=3
+set foldmethod=syntax
+set foldlevelstart=2
 
 let g:mix_format_on_save = 1
 

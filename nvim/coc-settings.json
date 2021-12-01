@@ -18,12 +18,12 @@
   "elixirLS.suggestSpecs": true,
   "solargraph.autoformat": true,
   "solargraph.formatting": true,
+  "solargraph.diagnostics": true,
   "solargraph.externalServer": {
     "host": "localhost",
     "port": 7658
   },
   "solargraph.transport": "external",
-  "solargraph.diagnostics": true,
   "solargraph.hover": false,
   "solargraph.checkGemVersion": false,
   "snippets.extends": {
