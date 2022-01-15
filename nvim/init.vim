@@ -157,8 +157,8 @@ map <C-p> :Files<CR>
 map <C-s> :w<CR>
 
 set cmdheight=3
-set foldmethod=syntax
-set foldlevelstart=2
+" set foldmethod=syntax
+" set foldlevelstart=2
 
 let g:mix_format_on_save = 1
 
@@ -250,7 +250,11 @@ nnoremap <expr> <F5>call PullAndRefresh()
 nnoremap <F3> :NumbersToggle<CR>
 nnoremap <F4> :NumbersOnOff<CR>
 
-nmap <leader>fmt :Prettier<CR>
+" nmap <leader>fmt :Prettier<CR>
+" nmap <leader>fmt <Plug>(coc-format-selected) 
+" xmap <leader>f  <Plug>(coc-format-selected)
+" nmap <leader>f  <Plug>(coc-format-selected)
+nnoremap <Leader>f :call CocAction('format') <CR>
 nmap <leader>do <Plug>(coc-codeaction)
 nmap <leader>rn <Plug>(coc-rename)
 nmap <leader>qf <Plug>(coc-fix-current)
