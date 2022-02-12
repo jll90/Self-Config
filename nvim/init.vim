@@ -90,6 +90,7 @@ Plug 'APZelos/blamer.nvim'
 
 Plug 'ap/vim-css-color'
 
+Plug 'mg979/vim-visual-multi'
 
 let mapleader = "," " map leader to comma
 
@@ -157,8 +158,8 @@ map <C-p> :Files<CR>
 map <C-s> :w<CR>
 
 set cmdheight=3
-set foldmethod=syntax
-set foldlevelstart=2
+" set foldmethod=syntax
+" set foldlevelstart=2
 
 let g:mix_format_on_save = 1
 
