@@ -1,5 +1,5 @@
-alias ls-avds="$ANDROID_HOME/emulator -list-avds"
+alias ls-avds="$ANDROID_HOME/emulator/emulator -list-avds"
 
 run_and (){
-  $ANDROID_HOME/emulator -avd $1
+  $ANDROID_HOME/emulator/emulator -avd $1
 }

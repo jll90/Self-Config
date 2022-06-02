@@ -11,6 +11,7 @@ alias nl="npm link"
 alias nw="npm run watch"
 alias nbd="npm run build && npm run dev"
 alias nb="npm run build"
+alias nrd="npm run dev"
 
 alias yd="yarn dev"
 alias ys="yarn start"
