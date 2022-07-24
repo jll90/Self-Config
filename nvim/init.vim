@@ -257,3 +257,11 @@ let g:airline#extensions#tabline#formatter = 'default'
 let g:blamer_enabled = 1
 let g:blamer_delay = 300
 let g:blamer_prefix = ' > '
+
+" RSpec.vim mappings
+map <Leader>rss :call RunCurrentSpecFile()<CR>
+map <Leader>rsc :call RunNearestSpec()<CR>
+map <Leader>rsl :call RunLastSpec()<CR>
+map <Leader>rsa :call RunAllSpecs()<CR>
+
+let g:rspec_command = "!bundle exec spring rspec {spec}"
