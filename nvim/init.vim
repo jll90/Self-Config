@@ -1,24 +1,22 @@
-" osx may need to install pip3 install pynvim
-" source $HOME/.config/nvim/themes/lucario.vim
-
 call plug#begin('~/.vim/plugged')
 
-" Shorthand notation; fetches https://github.com/junegunn/vim-easy-align
-Plug 'junegunn/vim-easy-align'
+" Can try these plugs some day
+" Plug 'mg979/vim-visual-multi'
+" Plug 'junegunn/vim-easy-align'
 
-" FZF
-" This line may not be needed
-Plug '/usr/local/bin/fzf'
+ " Both of these need to be installed
 Plug 'junegunn/fzf', { 'do': './install --bin' }
 Plug 'junegunn/fzf.vim'
 
+" Elixir language support
 Plug 'elixir-editors/vim-elixir'
+" Elixir formatting using native mix
+Plug 'mhinz/vim-mix-format', {'for': 'elixir'}
 
-"Support for a lot of languages
+" Support for a lot of languages
 Plug 'sheerun/vim-polyglot'
 
-"Visual Theme
-
+" Change surrounds
 Plug 'tpope/vim-surround'
 " All around git support
 Plug 'tpope/vim-fugitive'
@@ -31,29 +29,20 @@ Plug 'rhysd/git-messenger.vim'
 " Git changes
 Plug 'airblade/vim-gitgutter'
 
-"File Tree Navigation
+" File Tree Navigation
 Plug 'preservim/nerdtree', { 'on': 'NERDTreeToggle' }
-"Pretty IDE-like icons
+" Pretty IDE-like icons
 Plug 'ryanoasis/vim-devicons'
 
-"GUI
-" Plug 'itchyny/lightline.vim'
-" Plug 'w0rp/ale'
-" coc-yank does this now
-" Plug 'machakann/vim-highlightedyank'
+ " Status bar
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
 " Coc vim
-" Plug 'neoclide/coc.nvim', {'branch': 'master', 'do': 'yarn install --frozen-lockfile'}
-" Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " Vim formatting
 Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
-
-" Elixir formatting using native mix
-Plug 'mhinz/vim-mix-format', {'for': 'elixir'}
 
 " Rainbow brackets
 Plug 'frazrepo/vim-rainbow'
@@ -77,28 +66,27 @@ Plug 'myusuf3/numbers.vim'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install', 'for': 'markdown'  }
 
 " For purify theme
-Plug 'kyoz/purify', { 'rtp': 'vim' }
 Plug 'sonph/onehalf', { 'rtp': 'vim' }
-Plug 'mhartington/oceanic-next'
-Plug 'joshdick/onedark.vim'
-Plug 'morhetz/gruvbox'
-Plug 'crusoexia/vim-monokai'
+
+" Rubocop
 Plug 'ngmy/vim-rubocop'
 
  " blame
 Plug 'APZelos/blamer.nvim'
 
+ " CSS syntax highlighting
 Plug 'ap/vim-css-color'
 
-Plug 'mg979/vim-visual-multi'
+ " Rspec Integration
+Plug 'thoughtbot/vim-rspec'
+
+" Initialize plugin system
+call plug#end()
 
 let mapleader = "," " map leader to comma
 
 " https://github.com/neoclide/coc-yank
-let g:coc_global_extensions = ['coc-snippets', 'coc-emmet', 'coc-angular', 'coc-css', 'coc-elixir', 'coc-html', 'coc-solargraph', 'coc-tsserver', 'coc-json', 'coc-yank', 'coc-prettier', 'coc-docker', 'coc-rls', 'coc-rust-analyzer', 'coc-lua', 'coc-yaml', 'coc-sql', 'coc-vetur', 'coc-go', 'coc-tabnine', 'coc-julia']
-
-" Initialize plugin system
-call plug#end()
+let g:coc_global_extensions = ['coc-snippets', 'coc-emmet', 'coc-css', 'coc-elixir', 'coc-html', 'coc-solargraph', 'coc-tsserver', 'coc-json', 'coc-yank', 'coc-prettier', 'coc-docker', 'coc-rls', 'coc-rust-analyzer', 'coc-lua', 'coc-yaml', 'coc-sql', 'coc-go', 'coc-tabnine', 'coc-julia']
 
 syntax on
 set number
@@ -110,17 +98,9 @@ if (has("termguicolors"))
  set termguicolors
 endif
 
-" colorscheme onedark
-" colorscheme gruvbox
-" colorscheme monokai
-" colorscheme molokai
-" colorscheme purify
-" colorscheme lucario
 colorscheme onehalfdark
-let g:airline_theme='onehalfdark'
 
-" colorscheme OceanicNext
-" let g:airline_theme='oceanictext'
+set encoding=utf8
 
 set expandtab
 set softtabstop=2
@@ -132,6 +112,14 @@ set undofile
 
 set splitright
 set splitbelow
+
+set updatetime=300
+set hidden
+
+set cmdheight=3
+" Must match terminal
+" set guifont=DroidSansMono\ Nerd\ Font\ Mono\ Book\ 12
+set guifont=$NVIM_FONT
 
 nnoremap <up> <nop>
 nnoremap <down> <nop>
@@ -152,14 +140,8 @@ nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 
-" se mouse+=a
-
 map <C-p> :Files<CR>
 map <C-s> :w<CR>
-
-set cmdheight=3
-" set foldmethod=syntax
-" set foldlevelstart=2
 
 let g:mix_format_on_save = 1
 
@@ -171,7 +153,7 @@ let g:NERDTreeStatusline = ''
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 " Toggle
 " nnoremap <leader>tr g:NERDTree.IsOpen() ? "\:NERDTreeClose<CR>" : bufexists(expand('%')) ? "\:NERDTreeFind<CR>" : "\:NERDTree<CR>"
-nnoremap <leader>t :NERDTreeToggle<CR>
+nnoremap <leader>tr :NERDTreeToggle<CR>
 
 let g:rainbow_active = 1
 
@@ -198,10 +180,6 @@ nnoremap <A-l> <C-w>l
 nnoremap <silent> <space>y  :<C-u>CocList -A --normal yank<cr>
 " https://github.com/ryanoasis/vim-devicons/wiki/Installationr
 " when using on Ubuntu check this url
-set encoding=utf8
-" Must match terminal
-" set guifont=DroidSansMono\ Nerd\ Font\ Mono\ Book\ 12
-set guifont=$NVIM_FONT
 
 " coc-snippets
 " Use <C-l> for trigger snippet expand.
@@ -255,7 +233,7 @@ nnoremap <F4> :NumbersOnOff<CR>
 " nmap <leader>fmt <Plug>(coc-format-selected) 
 " xmap <leader>f  <Plug>(coc-format-selected)
 " nmap <leader>f  <Plug>(coc-format-selected)
-nnoremap <Leader>f :call CocAction('format') <CR>
+nnoremap <leader>f :call CocAction('format') <CR>
 nmap <leader>do <Plug>(coc-codeaction)
 nmap <leader>rn <Plug>(coc-rename)
 nmap <leader>qf <Plug>(coc-fix-current)
@@ -267,6 +245,7 @@ else
   inoremap <silent><expr> <c-@> coc#refresh()
 endif
 
+let g:airline_theme='onehalfdark'
 " airline shows buffers up top when there's one tab open
 let g:airline#extensions#tabline#enabled = 1
 
@@ -275,17 +254,6 @@ let g:airline#extensions#tabline#left_alt_sep = '|'
 
 let g:airline#extensions#tabline#formatter = 'default'
 
-" let g:airline_theme='simple'
-"
-let g:LanguageClient_rootMarkers = ['*.cabal', 'stack.yaml']
-
 let g:blamer_enabled = 1
-let g:blamer_delay = 500
+let g:blamer_delay = 300
 let g:blamer_prefix = ' > '
-
-set updatetime=300
-" nmap <Esc> :call coc#float#close_all() <CR>
-"
-set hidden
-
-let g:ale_completion_autoimport = 1
