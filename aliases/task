@@ -1,0 +1,4 @@
+alias tl=task list
+function ta(){
+  task add "$@"
+}

@@ -26,6 +26,10 @@ if [ -f ${SELF_CONFIG_PATH}/aliases/brew ]; then
   source ${SELF_CONFIG_PATH}/aliases/brew
 fi
 
+if [ -f ${SELF_CONFIG_PATH}/aliases/task ]; then
+  source ${SELF_CONFIG_PATH}/aliases/task
+fi
+
 export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --glob "!.git/*"'
 
 alias n.="nvim ."

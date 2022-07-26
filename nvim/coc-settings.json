@@ -11,13 +11,12 @@
     "ts",
     "typescriptreact",
     "javascriptreact",
-    "ruby",
     "rust"
   ],
   "elixir.pathToElixirLS": "~/.elixir-ls/release/language_server.sh",
   "elixirLS.suggestSpecs": true,
   "solargraph.completion": true,
-  "solargraph.autoformat": true,
+  "solargraph.autoformat": false,
   "solargraph.formatting": true,
   "solargraph.diagnostics": true,
   "solargraph.hover": false,
@@ -28,5 +27,5 @@
     "typescript": ["javascript", "javascriptreact"],
     "typescriptreact": ["javascript", "javascriptreact", "typescript"]
   },
-  "prettier.disableSuccessMessage": true,
+  "prettier.disableSuccessMessage": true
 }
