@@ -80,13 +80,19 @@ Plug 'ap/vim-css-color'
  " Rspec Integration
 Plug 'thoughtbot/vim-rspec'
 
+ " support for prisma schema files
+Plug 'pantharshit00/vim-prisma'
+
+ " theme
+Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
+
 " Initialize plugin system
 call plug#end()
 
 let mapleader = "," " map leader to comma
 
 " https://github.com/neoclide/coc-yank
-let g:coc_global_extensions = ['coc-snippets', 'coc-emmet', 'coc-css', 'coc-elixir', 'coc-html', 'coc-solargraph', 'coc-tsserver', 'coc-json', 'coc-yank', 'coc-prettier', 'coc-docker', 'coc-rls', 'coc-rust-analyzer', 'coc-lua', 'coc-yaml', 'coc-sql', 'coc-go', 'coc-tabnine', 'coc-julia']
+let g:coc_global_extensions = ['coc-snippets', 'coc-emmet', 'coc-css', 'coc-elixir', 'coc-html', 'coc-solargraph', 'coc-tsserver', 'coc-json', 'coc-yank', 'coc-prettier', 'coc-docker', 'coc-rust-analyzer', 'coc-lua', 'coc-yaml', 'coc-sql', 'coc-go', 'coc-tabnine', 'coc-julia', 'coc-eslint', 'coc-prisma']
 
 syntax on
 set number
@@ -98,7 +104,7 @@ if (has("termguicolors"))
  set termguicolors
 endif
 
-colorscheme onehalfdark
+colorscheme catppuccin
 
 set encoding=utf8
 
