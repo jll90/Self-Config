@@ -3,6 +3,7 @@
   "diagnostic.messageDelay": 100,
   "diagnostic.virtualText": true,
   "diagnostic.virtualTextCurrentLineOnly": false,
+  "tsserver.tsdk": "./node_modules/typescript/lib",
   "coc.preferences.formatOnSaveFiletypes": [
     "css",
     "scss",
@@ -27,5 +28,6 @@
     "typescript": ["javascript", "javascriptreact"],
     "typescriptreact": ["javascript", "javascriptreact", "typescript"]
   },
-  "prettier.disableSuccessMessage": true
+  "prettier.disableSuccessMessage": true,
+  "snippets.ultisnips.pythonPrompt": false
 }
